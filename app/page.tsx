@@ -129,7 +129,8 @@ export default function Page() {
         {/* Hero */}
         <Section sx={{ pt: { xs: 6, md: 10 } }}>
           <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid container>
+              <Grid item xs={12} md={6}>
               <Stack spacing={3}>
                 <Chip
                   label="Spécial freelances"
@@ -164,7 +165,8 @@ export default function Page() {
                     Voir les fonctionnalités
                   </Button>
                 </Stack>
-              </Stack>
+              </Grid>
+            </Grid>
             </Grid>
 
             {/* Conceptual Illustration */}
@@ -608,7 +610,7 @@ export default function Page() {
                 InputProps={{ sx: { borderRadius: 2 } }}
               />
               <Button variant="contained" sx={{ borderRadius: 2 }}>
-                S'abonner
+                S&apos;abonner
               </Button>
             </Stack>
             <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
