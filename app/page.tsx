@@ -26,6 +26,7 @@ import {
   TextField,
   IconButton,
 } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material/styles';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -64,11 +65,11 @@ const NavLink = ({
 const Section = ({
   id,
   children,
-  sx = {} as any,
+  sx,
 }: {
   id?: string;
   children: React.ReactNode;
-  sx?: any;
+  sx?: SxProps<Theme>;
 }) => (
   <Box
     id={id}
@@ -138,7 +139,7 @@ export default function Page() {
                 />
                 <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
                   Automatisez vos tâches.
-                  <br /> Restez concentré sur l&#39;essentiel.
+                  <br /> Restez concentré sur l&apos;essentiel.
                 </Typography>
                 <Typography variant="h6" color="text.secondary">
                   Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
@@ -174,7 +175,7 @@ export default function Page() {
                 steps={[
                   { icon: <DesignServicesRoundedIcon />, title: "Contrat signé", subtitle: "Déclencheur" },
                   { icon: <EmailRoundedIcon />, title: "Envoyer email de bienvenue", subtitle: "Automatique" },
-                  { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d'intro", subtitle: "Calendrier partagé" },
+                  { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d’intro", subtitle: "Calendrier partagé" },
                   { icon: <ReceiptLongRoundedIcon />, title: "Créer un dossier client", subtitle: "Notion / Google Drive" },
                 ]}
               />
