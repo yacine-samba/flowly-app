@@ -131,41 +131,40 @@ export default function Page() {
           <Grid container spacing={6} alignItems="center">
             <Grid container>
               <Grid item xs={12} md={6}>
-              <Stack spacing={3}>
-                <Chip
-                  label="Spécial freelances"
-                  color="secondary"
-                  variant="outlined"
-                  sx={{ width: 'fit-content' }}
-                />
-                <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
-                  Automatisez vos tâches.
-                  <br /> Restez concentré sur l&apos;essentiel.
-                </Typography>
-                <Typography variant="h6" color="text.secondary">
-                  Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
-                </Typography>
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                  <Button
-                    href="#get-started"
-                    variant="contained"
-                    size="large"
-                    startIcon={<PlayArrowRoundedIcon />}
-                    sx={{ borderRadius: 2 }}
-                  >
-                    Créer mon premier workflow
-                  </Button>
-                  <Button
-                    href="#features"
+                <Stack spacing={3}>
+                  <Chip
+                    label="Spécial freelances"
+                    color="secondary"
                     variant="outlined"
-                    size="large"
-                    sx={{ borderRadius: 2 }}
-                    endIcon={<LaunchIcon />}
-                  >
-                    Voir les fonctionnalités
-                  </Button>
-                </Stack>
-              </Grid>
+                    sx={{ width: 'fit-content' }}
+                  />
+                  <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
+                    Automatisez vos tâches.
+                    <br /> Restez concentré sur l&apos;essentiel.
+                  </Typography>
+                  <Typography variant="h6" color="text.secondary">
+                    Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
+                  </Typography>
+                  <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                    <Button
+                      href="#get-started"
+                      variant="contained"
+                      size="large"
+                      startIcon={<PlayArrowRoundedIcon />}
+                      sx={{ borderRadius: 2 }}
+                    >
+                      Créer mon premier workflow
+                    </Button>
+                    <Button
+                      href="#features"
+                      variant="outlined"
+                      size="large"
+                      sx={{ borderRadius: 2 }}
+                      endIcon={<LaunchIcon />}
+                    >
+                      Voir les fonctionnalités
+                    </Button>
+                  </Stack>
             </Grid>
 
             {/* Conceptual Illustration */}
@@ -631,12 +630,12 @@ export default function Page() {
 
         {/* Bottom bar */}
         <Divider sx={{ my: 4 }} />
-        <Stack 
-        direction={{ xs: 'column', sm: 'row' }} 
-        spacing={2} 
-        justifyContent="space-between" 
-        alignItems={{ xs: 'flex-start', sm: 'center'}}
-        paddingInline={6}
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
+          justifyContent="space-between"
+          alignItems={{ xs: 'flex-start', sm: 'center' }}
+          paddingInline={6}
         >
           <Typography variant="body2" color="text.secondary">
             © {new Date().getFullYear()} Flowly. Tous droits réservés.
