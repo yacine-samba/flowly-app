@@ -167,7 +167,6 @@ export default function Page() {
                 </Stack>
               </Grid>
             </Grid>
-            </Grid>
 
             {/* Conceptual Illustration */}
 
