@@ -127,86 +127,90 @@ export default function Page() {
 
       <Container maxWidth="lg">
         {/* Hero */}
-        <Section sx={{ pt: { xs: 6, md: 10 } }}>
+        <Section>
           <Grid container spacing={6} alignItems="center">
-            <Grid container>
-              <Grid item xs={12} md={6}>
-                <Stack spacing={3}>
-                  <Chip
-                    label="Spécial freelances"
-                    color="secondary"
+            {/* Colonne gauche : texte + CTA */}
+            <Grid component="div">
+              <Stack spacing={3}>
+                <Chip
+                  label="Spécial freelances"
+                  color="secondary"
+                  variant="outlined"
+                  sx={{ width: 'fit-content' }}
+                />
+                <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
+                  Automatisez vos tâches.
+                  <br /> Restez concentré sur l&apos;essentiel.
+                </Typography>
+                <Typography variant="h6" color="text.secondary">
+                  Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
+                </Typography>
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                  <Button
+                    href="#get-started"
+                    variant="contained"
+                    size="large"
+                    startIcon={<PlayArrowRoundedIcon />}
+                    sx={{ borderRadius: 2 }}
+                  >
+                    Créer mon premier workflow
+                  </Button>
+                  <Button
+                    href="#features"
                     variant="outlined"
-                    sx={{ width: 'fit-content' }}
-                  />
-                  <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
-                    Automatisez vos tâches.
-                    <br /> Restez concentré sur l&apos;essentiel.
-                  </Typography>
-                  <Typography variant="h6" color="text.secondary">
-                    Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
-                  </Typography>
-                  <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                    <Button
-                      href="#get-started"
-                      variant="contained"
-                      size="large"
-                      startIcon={<PlayArrowRoundedIcon />}
-                      sx={{ borderRadius: 2 }}
-                    >
-                      Créer mon premier workflow
-                    </Button>
-                    <Button
-                      href="#features"
-                      variant="outlined"
-                      size="large"
-                      sx={{ borderRadius: 2 }}
-                      endIcon={<LaunchIcon />}
-                    >
-                      Voir les fonctionnalités
-                    </Button>
-                  </Stack>
+                    size="large"
+                    sx={{ borderRadius: 2 }}
+                    endIcon={<LaunchIcon />}
+                  >
+                    Voir les fonctionnalités
+                  </Button>
+                </Stack>
+              </Stack>
             </Grid>
 
-            {/* Conceptual Illustration */}
-
-            <Grid item size={4} xs={12} md={6}>
-              <WorkflowCard
-                title="Onboarding client"
-                steps={[
-                  { icon: <DesignServicesRoundedIcon />, title: "Contrat signé", subtitle: "Déclencheur" },
-                  { icon: <EmailRoundedIcon />, title: "Envoyer email de bienvenue", subtitle: "Automatique" },
-                  { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d’intro", subtitle: "Calendrier partagé" },
-                  { icon: <ReceiptLongRoundedIcon />, title: "Créer un dossier client", subtitle: "Notion / Google Drive" },
-                ]}
-              />
+            {/* Row : 3 workflows en flex-direction row sur grand ecran avec meme hauteur et centrés */}
+            <Grid
+              component="div"
+              sx={{
+                display: 'flex',
+                gap: 2,
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+              }}
+            >
+                <WorkflowCard
+                  title="Onboarding client"
+                  steps={[
+                    { icon: <DesignServicesRoundedIcon />, title: "Contrat signé", subtitle: "Déclencheur" },
+                    { icon: <EmailRoundedIcon />, title: "Envoyer email de bienvenue", subtitle: "Automatique" },
+                    { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d’intro", subtitle: "Calendrier partagé" },
+                    { icon: <ReceiptLongRoundedIcon />, title: "Créer un dossier client", subtitle: "Notion / Google Drive" },
+                  ]}
+                />
+                <WorkflowCard
+                  title="Gestion des paiements"
+                  steps={[
+                    { icon: <ReceiptLongRoundedIcon />, title: "Paiement reçu", subtitle: "Stripe / PayPal" },
+                    { icon: <EmailRoundedIcon />, title: "Envoyer le reçu", subtitle: "Email client" },
+                    { icon: <DesignServicesRoundedIcon />, title: "Mettre à jour la compta", subtitle: "Notion / Excel" },
+                    { icon: <NotificationsActiveRoundedIcon />, title: "Notifier sur Slack", subtitle: "Canal #finance" },
+                  ]}
+                />
+                <WorkflowCard
+                  title="Relances marketing"
+                  steps={[
+                    { icon: <DesignServicesRoundedIcon />, title: "Devis envoyé", subtitle: "Déclencheur" },
+                    { icon: <EmailRoundedIcon />, title: "Relance J+3", subtitle: "Email personnalisé" },
+                    { icon: <EmailRoundedIcon />, title: "Relance J+7", subtitle: "Deuxième email" },
+                    { icon: <EventAvailableRoundedIcon />, title: "Proposer un appel", subtitle: "Calendrier partagé" },
+                  ]}
+                />
             </Grid>
-
-            <Grid item size={4} xs={12} md={6}>
-              <WorkflowCard
-                title="Gestion des paiements"
-                steps={[
-                  { icon: <ReceiptLongRoundedIcon />, title: "Paiement reçu", subtitle: "Stripe / PayPal" },
-                  { icon: <EmailRoundedIcon />, title: "Envoyer le reçu", subtitle: "Email client" },
-                  { icon: <DesignServicesRoundedIcon />, title: "Mettre à jour la compta", subtitle: "Notion / Excel" },
-                  { icon: <NotificationsActiveRoundedIcon />, title: "Notifier sur Slack", subtitle: "Canal #finance" },
-                ]}
-              />
-            </Grid>
-
-            <Grid item size={4} xs={12} md={6}>
-              <WorkflowCard
-                title="Relances marketing"
-                steps={[
-                  { icon: <DesignServicesRoundedIcon />, title: "Devis envoyé", subtitle: "Déclencheur" },
-                  { icon: <EmailRoundedIcon />, title: "Relance J+3", subtitle: "Email personnalisé" },
-                  { icon: <EmailRoundedIcon />, title: "Relance J+7", subtitle: "Deuxième email" },
-                  { icon: <EventAvailableRoundedIcon />, title: "Proposer un appel", subtitle: "Calendrier partagé" },
-                ]}
-              />
-            </Grid>
-
           </Grid>
         </Section>
+
 
         {/* Features */}
         <Section id="features">
@@ -222,7 +226,7 @@ export default function Page() {
             spacing={3}
             alignItems="stretch"
             sx={{
-              '& > .MuiGrid-item': { display: 'flex' }, // ceinture et bretelles
+              '& > .MuiGrid-item': { display: 'flex' }
             }}
           >
             <FeatureCard
@@ -273,7 +277,7 @@ export default function Page() {
               { icon: <DesignServicesRoundedIcon />, title: 'Simple & intuitif', description: 'Pensé pour les besoins des freelances.' },
               { icon: <TrendingUpRoundedIcon />, title: 'Pro & scalable', description: 'Des workflows qui grandissent avec vous.' },
             ].map((item, i) => (
-              <Grid size={6} item xs={12} md={6} key={i}>
+              <Grid size={6} key={i}>
                 <Card>
                   <CardContent>
                     <Stack direction="row" spacing={2} alignItems="center">
@@ -314,7 +318,7 @@ export default function Page() {
             Démarrez gratuitement. Passez en Pro quand vous êtes prêt.
           </Typography>
           <Grid container spacing={3} justifyContent="center">
-            <Grid item xs={12} md={5}>
+            <Grid>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Typography variant="overline" color="text.secondary">
@@ -365,7 +369,7 @@ export default function Page() {
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={5}>
+            <Grid>
               <Card
                 sx={{
                   height: '100%',
@@ -428,7 +432,7 @@ export default function Page() {
             </Grid>
 
 
-            <Grid item xs={12} md={5}>
+            <Grid>
               <Card
                 sx={{
                   height: '100%',
@@ -562,7 +566,7 @@ export default function Page() {
       >
         <Grid container spacing={4} justifyContent="space-between" sx={{ px: { xs: 3, md: 6 } }}>
           {/* Brand + tagline */}
-          <Grid item xs={12} md={4}>
+          <Grid>
             <Stack spacing={1.5}>
               <Stack direction="row" alignItems="center" spacing={1}>
                 <Box sx={{ width: 28, height: 28, borderRadius: 2, bgcolor: 'primary.main', display: 'grid', placeItems: 'center' }}>
@@ -577,7 +581,7 @@ export default function Page() {
           </Grid>
 
           {/* Navigation */}
-          <Grid item xs={12} sm={6} md={2.5}>
+          <Grid>
             <Typography variant="overline" color="text.secondary">Produit</Typography>
             <Stack spacing={1.2} sx={{ mt: 1 }}>
               <MuiLink href="#features" color="text.secondary">Fonctionnalités</MuiLink>
@@ -587,7 +591,7 @@ export default function Page() {
           </Grid>
 
           {/* Légal */}
-          <Grid item xs={12} sm={6} md={2.5}>
+          <Grid>
             <Typography variant="overline" color="text.secondary">Légal</Typography>
             <Stack spacing={1.2} sx={{ mt: 1 }}>
               <MuiLink href="#legal" color="text.secondary">Mentions légales</MuiLink>
@@ -597,7 +601,7 @@ export default function Page() {
           </Grid>
 
           {/* Newsletter */}
-          <Grid item xs={12} md={3}>
+          <Grid>
             <Typography variant="overline" color="text.secondary">Restez informé</Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 1 }}>
               <TextField
@@ -673,7 +677,7 @@ function WorkflowCard({
         border: '1px solid rgba(255,255,255,0.08)',
         background:
           'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%)',
-        height: '100%',          // 👈 clé pour occuper la colonne
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -705,7 +709,7 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <Grid item size={6} xs={12} sm={6} md={4} sx={{ display: 'flex' }}>
+    <Grid size={6} sx={{ display: 'flex'}}>
       <Card sx={{ width: '100%', height: '100%', display: 'flex' }}>
         <CardContent sx={{ flex: 1 }}>
           <Stack spacing={2}>
@@ -746,7 +750,7 @@ function TestimonialCard({
   numberSize?: 4 | 6 | 8 | 12;
 }) {
   return (
-    <Grid item size={numberSize} xs={12} md={4}>
+    <Grid size={numberSize}>
       <Card sx={{ height: '100%' }}>
         <CardContent>
           <Stack spacing={2}>
@@ -823,4 +827,4 @@ function FlowNode({
       </Box>
     </Stack>
   );
-}
+};
