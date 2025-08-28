@@ -129,23 +129,39 @@ export default function Page() {
         {/* Hero */}
         <Section>
           <Grid container spacing={6} alignItems="center">
-            {/* Colonne gauche : texte + CTA */}
             <Grid component="div">
-              <Stack spacing={3}>
+              <Stack
+                spacing={3}
+                alignItems="flex-start"
+                sx={{ textAlign: { xs: 'center', md: 'left' } }}
+              >
                 <Chip
                   label="Spécial freelances"
                   color="secondary"
                   variant="outlined"
                   sx={{ width: 'fit-content' }}
                 />
-                <Typography variant="h2" component="h1" gutterBottom sx={{ lineHeight: 1.1 }}>
+                <Typography
+                  variant="h2"
+                  component="h1"
+                  gutterBottom
+                  sx={{
+                    lineHeight: 1.1,
+                    fontSize: { xs: '2.5rem', sm: '3rem', md: '3.75rem' },
+                    fontWeight: 800,
+                  }}
+                >
                   Automatisez vos tâches.
                   <br /> Restez concentré sur l&apos;essentiel.
                 </Typography>
-                <Typography variant="h6" color="text.secondary">
+                <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
                   Flowly vous permet de créer des <strong>workflows sans coder</strong> pour tout automatiser : envoyer une facture après une mission, programmer un appel après un formulaire, ou relancer un client automatiquement.
                 </Typography>
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                <Stack
+                  direction={{ xs: 'column', sm: 'row' }}
+                  spacing={2}
+                  sx={{ width: { xs: '100%', sm: 'fit-content' } }}
+                >
                   <Button
                     href="#get-started"
                     variant="contained"
@@ -180,33 +196,33 @@ export default function Page() {
                 flex: 1,
               }}
             >
-                <WorkflowCard
-                  title="Onboarding client"
-                  steps={[
-                    { icon: <DesignServicesRoundedIcon />, title: "Contrat signé", subtitle: "Déclencheur" },
-                    { icon: <EmailRoundedIcon />, title: "Envoyer email de bienvenue", subtitle: "Automatique" },
-                    { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d’intro", subtitle: "Calendrier partagé" },
-                    { icon: <ReceiptLongRoundedIcon />, title: "Créer un dossier client", subtitle: "Notion / Google Drive" },
-                  ]}
-                />
-                <WorkflowCard
-                  title="Gestion des paiements"
-                  steps={[
-                    { icon: <ReceiptLongRoundedIcon />, title: "Paiement reçu", subtitle: "Stripe / PayPal" },
-                    { icon: <EmailRoundedIcon />, title: "Envoyer le reçu", subtitle: "Email client" },
-                    { icon: <DesignServicesRoundedIcon />, title: "Mettre à jour la compta", subtitle: "Notion / Excel" },
-                    { icon: <NotificationsActiveRoundedIcon />, title: "Notifier sur Slack", subtitle: "Canal #finance" },
-                  ]}
-                />
-                <WorkflowCard
-                  title="Relances marketing"
-                  steps={[
-                    { icon: <DesignServicesRoundedIcon />, title: "Devis envoyé", subtitle: "Déclencheur" },
-                    { icon: <EmailRoundedIcon />, title: "Relance J+3", subtitle: "Email personnalisé" },
-                    { icon: <EmailRoundedIcon />, title: "Relance J+7", subtitle: "Deuxième email" },
-                    { icon: <EventAvailableRoundedIcon />, title: "Proposer un appel", subtitle: "Calendrier partagé" },
-                  ]}
-                />
+              <WorkflowCard
+                title="Onboarding client"
+                steps={[
+                  { icon: <DesignServicesRoundedIcon />, title: "Contrat signé", subtitle: "Déclencheur" },
+                  { icon: <EmailRoundedIcon />, title: "Envoyer email de bienvenue", subtitle: "Automatique" },
+                  { icon: <EventAvailableRoundedIcon />, title: "Planifier un appel d’intro", subtitle: "Calendrier partagé" },
+                  { icon: <ReceiptLongRoundedIcon />, title: "Créer un dossier client", subtitle: "Notion / Google Drive" },
+                ]}
+              />
+              <WorkflowCard
+                title="Gestion des paiements"
+                steps={[
+                  { icon: <ReceiptLongRoundedIcon />, title: "Paiement reçu", subtitle: "Stripe / PayPal" },
+                  { icon: <EmailRoundedIcon />, title: "Envoyer le reçu", subtitle: "Email client" },
+                  { icon: <DesignServicesRoundedIcon />, title: "Mettre à jour la compta", subtitle: "Notion / Excel" },
+                  { icon: <NotificationsActiveRoundedIcon />, title: "Notifier sur Slack", subtitle: "Canal #finance" },
+                ]}
+              />
+              <WorkflowCard
+                title="Relances marketing"
+                steps={[
+                  { icon: <DesignServicesRoundedIcon />, title: "Devis envoyé", subtitle: "Déclencheur" },
+                  { icon: <EmailRoundedIcon />, title: "Relance J+3", subtitle: "Email personnalisé" },
+                  { icon: <EmailRoundedIcon />, title: "Relance J+7", subtitle: "Deuxième email" },
+                  { icon: <EventAvailableRoundedIcon />, title: "Proposer un appel", subtitle: "Calendrier partagé" },
+                ]}
+              />
             </Grid>
           </Grid>
         </Section>
@@ -214,7 +230,11 @@ export default function Page() {
 
         {/* Features */}
         <Section id="features">
-          <Typography variant="h3" textAlign="center" gutterBottom>
+          <Typography
+            variant="h3"
+            textAlign="center"
+            gutterBottom
+            fontSize={{ xs: '2rem', md: '2.5rem' }}>
             Tout pour automatiser sans coder
           </Typography>
           <Typography color="text.secondary" textAlign="center" sx={{ mb: 6 }}>
@@ -280,7 +300,7 @@ export default function Page() {
               <Grid size={6} key={i}>
                 <Card>
                   <CardContent>
-                    <Stack direction="row" spacing={2} alignItems="center">
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
                       <Box
                         sx={{
                           width: 48,
@@ -295,8 +315,8 @@ export default function Page() {
                         {item.icon}
                       </Box>
                       <Box>
-                        <Typography variant="h6">{item.title}</Typography>
-                        <Typography color="text.secondary">{item.description}</Typography>
+                        <Typography variant="h6" textAlign={{ xs: 'center', sm: 'left' }}>{item.title}</Typography>
+                        <Typography color="text.secondary" textAlign={{ xs: 'justify', sm: 'left' }}>{item.description}</Typography>
                       </Box>
                     </Stack>
                   </CardContent>
@@ -319,7 +339,7 @@ export default function Page() {
           </Typography>
           <Grid container spacing={3} justifyContent="center">
             <Grid>
-              <Card sx={{ height: '100%' }}>
+              <Card sx={{ height: '100%', width: 300 }}>
                 <CardContent>
                   <Typography variant="overline" color="text.secondary">
                     Free
@@ -637,14 +657,13 @@ export default function Page() {
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={2}
-          justifyContent="space-between"
+          justifyContent={{ xs: 'center', sm: 'space-between' }}
           alignItems={{ xs: 'flex-start', sm: 'center' }}
           paddingInline={6}
         >
           <Typography variant="body2" color="text.secondary">
             © {new Date().getFullYear()} Flowly. Tous droits réservés.
           </Typography>
-
           <Button
             size='small'
             href="https://www.linkedin.com/in/yacine-samba/"
@@ -672,6 +691,7 @@ function WorkflowCard({
   return (
     <Box
       sx={{
+        width: 350,
         p: 3,
         borderRadius: 3,
         border: '1px solid rgba(255,255,255,0.08)',
@@ -709,10 +729,14 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <Grid size={6} sx={{ display: 'flex'}}>
+    <Grid size={6} sx={{ display: 'flex' }}>
       <Card sx={{ width: '100%', height: '100%', display: 'flex' }}>
         <CardContent sx={{ flex: 1 }}>
-          <Stack spacing={2}>
+          <Stack spacing={2}
+            direction={{ xs: 'column', sm: 'row' }}
+            alignItems="center"
+            justifyContent="flex-start"
+          >
             <Box
               sx={{
                 width: 56,
@@ -727,8 +751,8 @@ function FeatureCard({
               {icon}
             </Box>
             <Box>
-              <Typography variant="h6">{title}</Typography>
-              <Typography color="text.secondary">{description}</Typography>
+              <Typography variant="h6" textAlign={{ xs: 'center', sm: 'left' }}>{title}</Typography>
+              <Typography color="text.secondary" textAlign={{ xs: 'justify', sm: 'left' }}>{description}</Typography>
             </Box>
           </Stack>
         </CardContent>
