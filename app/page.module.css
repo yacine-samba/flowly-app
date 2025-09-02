@@ -1,9 +1,5 @@
 body,html {
-    max-width: 1024px;
     margin: auto;
-    overflow-x: hidden;
-    background: var(--background-color);
-    font-family: gabarito;
     z-index: 0;
     scroll-behavior: smooth
 }
