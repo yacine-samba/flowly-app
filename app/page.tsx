@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import './page.module.css';
 import Image from 'next/image';
 import {
   AppBar,
